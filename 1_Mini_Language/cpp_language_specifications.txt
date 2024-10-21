@@ -1,0 +1,90 @@
+
+Language Specification for C++:
+
+1. Language Definition:
+
+1.1 Alphabet:
+1.1.a Uppercase (A-Z) and lowercase letters (a-z) of the English alphabet.
+1.1.b Underscore character '_'.
+1.1.c Decimal digits (0-9).
+
+Lexical Elements:
+
+a. Special Symbols representing:
+- Operators: + - * / = < <= >= == != && || ++ --
+- Separators: ( ) { } [ ] , ; space
+
+b. Reserved Words (Keywords):
+int, char, float, double, if, else, while, for, return, void, cout, cin, include, using, namespace
+
+c. Identifiers:
+An identifier is a sequence of letters, digits, and underscores such that the first character must be a letter or an underscore. The rule is:
+identifier ::= letter | "_" {letter | digit | "_"}
+letter ::= "A" | "B" | . . . | "Z" | "a" | "b" | . . . | "z"
+digit ::= "0" | "1" | . . . | "9"
+
+d. Constants:
+1. Integer - Rule:
+int_const ::= digit{digit}
+
+2. Character - Rule:
+char_const ::= ''' printable_char '''
+printable_char ::= letter | digit | symbol | whitespace
+
+3. String - Rule:
+string_const ::= """ char_seq """
+char_seq ::= printable_char{char_seq}
+
+2. Syntax:
+
+Predefined tokens are represented between quotation marks "".
+
+a) Syntactical Rules:
+program ::= include_directive "int" "main" "(" ")" block
+
+include_directive ::= "#include" "<" library_name ">"
+library_name ::= "iostream" | "string" | "vector" | ...
+
+block ::= "{" stmt_list "}"
+stmt_list ::= stmt | stmt stmt_list
+
+b) Declarations:
+Variable Declaration:
+declaration ::= type IDENTIFIER [ "=" expression ] ";"
+type ::= "int" | "float" | "char" | "double" | "void" | array_decl
+
+Array Declaration:
+array_decl ::= type IDENTIFIER "[" int_const "]"
+
+c) Statements:
+stmt ::= if_stmt | while_stmt | for_stmt | assign_stmt | return_stmt | io_stmt
+
+Assignment Statement:
+assign_stmt ::= IDENTIFIER "=" expression ";"
+
+d) Expressions:
+expression ::= expression "+" term | expression "-" term | term
+term ::= term "*" factor | term "/" factor | factor
+factor ::= IDENTIFIER | int_const | "(" expression ")" | func_call
+
+e) Control Structures:
+If Statement:
+if_stmt ::= "if" "(" condition ")" stmt [ "else" stmt ]
+
+While Statement:
+while_stmt ::= "while" "(" condition ")" stmt
+
+For Statement:
+for_stmt ::= "for" "(" assign_stmt condition ";" assign_stmt ")" stmt
+
+f) Condition:
+condition ::= expression RELATION expression
+RELATION ::= "==" | "!=" | "<" | "<=" | ">" | ">="
+
+g) Input/Output Statements:
+I/O Statement:
+io_stmt ::= "cin" ">>" IDENTIFIER ";" | "cout" "<<" expression ";"
+
+h) Function Call:
+func_call ::= IDENTIFIER "(" [argument_list] ")"
+argument_list ::= expression {"," expression}

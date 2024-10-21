@@ -1,0 +1,40 @@
+
+Lab Documentation
+
+Objective:
+-----------
+The objective of this lab was to understand the process of defining a formal language specification, 
+and to develop a small program using the C++ language following the syntax and semantics rules provided.
+
+Language Specification:
+------------------------
+1. Alphabet:
+   - The language includes uppercase and lowercase English letters (A-Z, a-z), digits (0-9), and the underscore '_'.
+   - Reserved words include standard keywords from the C++ language (e.g., int, char, while, if, else, return).
+
+2. Lexical Elements:
+   - Special symbols include operators like +, -, *, /, and comparison operators like ==, <=, >=.
+   - Identifiers are sequences of letters and digits that start with a letter or an underscore.
+   - Constants include integers, characters, and strings.
+
+3. Syntax Rules:
+   - Programs begin with an include directive and the main function (int main()).
+   - Variable declarations specify types such as int, float, char, and arrays.
+   - Statements include assignment, control flow (if, while, for), and I/O operations.
+   - Conditions use relational operators (e.g., ==, !=, <, >) to compare expressions.
+
+Lab Exercise:
+-------------
+We implemented a simple C++ program to perform basic arithmetic operations (+, -, *, /) on two integers provided by the user.
+The program checks for division by zero and invalid operations.
+
+Program Code:
+-------------
+This C++ program is a simple calculator that performs basic arithmetic operations: addition,
+subtraction, multiplication, and division. It prompts the user to input two integers and an operator (+, -, *, or /). 
+The program then evaluates the operation and displays the result. It also includes error handling for invalid operations and prevents division by zero, displaying an appropriate error message in such cases.
+
+Conclusion:
+-----------
+This lab helped solidify the understanding of language specification by writing rules for lexical elements and syntax. 
+We also applied these concepts to develop a simple calculator program in C++. The program demonstrated the use of variables, conditionals, loops, and input/output operations in C++.
