@@ -1,0 +1,11 @@
+1: include
+2: iostream
+3: Person
+4: name
+5: 10
+6: age
+7: p
+8: 18
+9: "Adult"
+10: "Minor"
+11: 0
